@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wapper {
+            width: 500px;
+            margin: 0 auto
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .danhmuc {
+            padding: 10px 0 0 0;
+        }
+
+        .tieude {
+            position: relative
+        }
+
+        .danhmuc .chude h2 {
+            background-color: #ddd;
+            padding: 5px 0 5px 5px;
+            margin: 10px 0 10px 0;
+            position: relative;
+            
+        }
+        
+        .danhmuc .active .text {
+            background-color: aqua;
+            transition: 0.1s ease-in-out;
+            color: white;
+        }
+
+        .danhmuc img {
+            position: absolute;
+            height: 15px;
+            top: 10px;
+            right: 10px;
+            transform: rotate(270deg);
+            transition: 0.5s ease-in-out
+        }
+
+        .danhmuc .active img {
+            transform: rotate(90deg);
+        }
+
+        .danhmuc p {
+            margin: 10px 0 10px 0;
+            display: none;
+            padding: 0 5px;
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wapper">
+        <h1>
+            Tạo accordion thu gọn nội dung
+        </h1>
+        <div class="danhmuc">
+            <div class="chude active">
+                <div class="tieude ">
+                    <h2 class="text">Chủ đề 1</h2>
+                    <img src="./back.png" alt="" class="img">
+                </div>
+                <p class="vanban" id="vanban1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vel impedit suscipit illo aliquid? Neque tempora a, suscipit minima magni, at eum reprehenderit odit quidem perferendis provident, mollitia repudiandae exercitationem.</p>
+            </div>
+            <div class="chude">
+                <div class="tieude">
+                    <h2 class="text">Chủ đề 2</h2>
+                    <img src="../cuasomucluc/back.png" alt="" class="img">
+                </div>
+                <p class="vanban">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vel impedit suscipit illo aliquid? Neque tempora a, suscipit minima magni, at eum reprehenderit odit quidem perferendis provident, mollitia repudiandae exercitationem.</p>
+            </div>
+            <div class="chude">
+                <div class="tieude">
+                    <h2 class="text">Chủ đề 3</h2>
+                    <img src="../cuasomucluc/back.png" alt="" class="img">
+                </div>
+                <p class="vanban">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati vel impedit suscipit illo aliquid? Neque tempora a, suscipit minima magni, at eum reprehenderit odit quidem perferendis provident, mollitia repudiandae exercitationem.</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.chude').children('#vanban1').slideDown()
+            $('.chude').click(function() {
+                $(this).toggleClass('active')
+                $(this).children('.vanban').slideToggle()
+            })
+        })
+    </script>
+</body>
+</html>
